@@ -3,13 +3,64 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mi Web en GitHub Pages</title>
+  <title>Bienvenido al mundo Miguel</title>
   <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
   <header>
-    <h1>¡Hola, mundo!</h1>
-    <p>Esta es mi primera web con GitHub Pages.</p>
+    <!-- Sustituye 'ruta-de-la-foto.jpg' por la imagen de los padres -->
+    <img src="ruta-de-la-foto.jpg" alt="Foto de los padres" class="parents-photo">
+    <h1>Esperando a mi bebé</h1>
+    <p>Cuenta atrás para el gran día:</p>
   </header>
+  <div id="countdown">
+    <div class="time-box">
+      <div id="days">0</div>
+      <span>Días</span>
+    </div>
+    <div class="time-box">
+      <div id="hours">0</div>
+      <span>Horas</span>
+    </div>
+    <div class="time-box">
+      <div id="minutes">0</div>
+      <span>Minutos</span>
+    </div>
+    <div class="time-box">
+      <div id="seconds">0</div>
+      <span>Segundos</span>
+    </div>
+  </div>
+
+  <script>
+    // Establece la fecha de parto (AAAA-MM-DD)
+    const dueDate = new Date('2025-12-15T00:00:00');
+
+    function updateCountdown() {
+      const now = new Date();
+      const diff = dueDate - now;
+
+      if (diff <= 0) {
+        document.getElementById('countdown').innerHTML = '<p>¡El gran día ha llegado!</p>';
+        clearInterval(timerInterval);
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+
+    // Actualiza cada segundo
+    const timerInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
