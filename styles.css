@@ -1,51 +1,71 @@
+/* assets/css/styles.css */
 body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #f5f0e1, #d7efd9);
-      color: #5e5e56;
-      text-align: center;
-      padding: 2rem;
-    }
-    header {
-      margin-bottom: 2rem;
-    }
-    .parents-photo {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border-radius: 50%;
-      border: 4px solid #cde7d8;
-      margin-bottom: 1rem;
-    }
-    h1 {
-      margin: 0.5rem 0;
-      font-size: 2.5rem;
-      color: #4a4a42;
-    }
-    p {
-      color: #6b6b63;
-      margin: 0;
-    }
-    #countdown {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      font-size: 2rem;
-      margin-top: 2rem;
-    }
-    .time-box {
-      background: rgba(255, 255, 255, 0.9);
-      border: 2px solid #cde7d8;
-      border-radius: 8px;
-      padding: 1rem;
-      min-width: 80px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.08);
-    }
-    .time-box div {
-      color: #4a4a42;
-    }
-    .time-box span {
-      display: block;
-      font-size: 1.2rem;
-      margin-top: 0.5rem;
-      color: #7a7a6f;
-    }
+  font-family: 'Arial', sans-serif;
+  /* Fondos combinados */
+  background-image:
+    url('../images/fondos01.png'),
+    url('../images/ilustracion01.png');
+  background-size: cover, contain;
+  background-position: center center, bottom right;
+  background-repeat: no-repeat, no-repeat;
+  color: #5e5e56;
+  text-align: center;
+  padding: 2rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+header {
+  margin-bottom: 2rem;
+}
+
+.parents-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #cde7d8;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin: 0.5rem 0;
+  font-size: 2.5rem;
+  color: #4a4a42;
+}
+
+p {
+  color: #6b6b63;
+  margin: 0;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 2rem;
+  margin-top: 2rem;
+}
+
+.time-box {
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #cde7d8;
+  border-radius: 8px;
+  padding: 1rem;
+  min-width: 80px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+}
+
+.time-box div {
+  color: #4a4a42;
+}
+
+.time-box span {
+  display: block;
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #7a7a6f;
+}
