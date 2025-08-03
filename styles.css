@@ -1,71 +1,145 @@
-/* assets/css/styles.css */
+/* Reset margins and avoid horizontal scroll */
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Body typography and gradient background */
 body {
-  font-family: 'Arial', sans-serif;
-  /* Fondos combinados */
-  background-image:
-    url('../images/fondos01.png'),
-    url('../images/ilustracion01.png');
-  background-size: cover, contain;
-  background-position: center center, bottom right;
-  background-repeat: no-repeat, no-repeat;
+  font-family: Calibri, 'Arial', sans-serif;
   color: #5e5e56;
   text-align: center;
-  padding: 2rem;
-  min-height: 100vh;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  
 }
 
+/* Background image overlay with transparency */
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('assets/images/Ilustración01.png') center center no-repeat;
+  background-size: 80%;
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* Header */
 header {
   margin-bottom: 2rem;
+  z-index: 1;
 }
-
-.parents-photo {
-  width: 150px;
-  height: 150px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #cde7d8;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  margin: 0.5rem 0;
+header h1 {
+  margin: 0 0 0.5rem;
   font-size: 2.5rem;
   color: #4a4a42;
 }
-
-p {
-  color: #6b6b63;
+header p {
   margin: 0;
+  font-size: 1.1rem;
+  color: #6b6b63;
 }
 
-#countdown {
+/* Main content center */
+.center-section {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  font-size: 2rem;
-  margin-top: 2rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 600px;
+  z-index: 1;
 }
 
-.time-box {
-  background: rgba(255, 255, 255, 0.9);
-  border: 2px solid #cde7d8;
-  border-radius: 8px;
-  padding: 1rem;
-  min-width: 80px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+/* Hero image styling */
+.hero-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.time-box div {
+/* Intro text */
+.intro-text {
+  text-align: center;
+  line-height: 1.4;
   color: #4a4a42;
 }
 
-.time-box span {
+/* Countdown */
+.countdown-large {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  z-index: 1;
+}
+.countdown-large .time-box {
+  background-color: rgba(237, 247, 246, 0.8); /* tonos azul del mar claros */
+  border: 4px solid #086e97; /* azul oceánico */
+  border-radius: 12px;
+  padding: 1.2rem 1rem;
+  min-width: 100px;
+  box-shadow: 0 6px 9px rgba(0, 0, 0, 0.1);
+  font-family: Calibri, Georgia, serif;
+  color: #023458; /* texto azul intenso */
+}
+.countdown-large .time-box div {
+  font-size: 2.5rem;
+  line-height: 1;
+}
+.countdown-large .time-box span {
   display: block;
   font-size: 1.2rem;
-  margin-top: 0.5rem;
-  color: #7a7a6f;
+  margin-top: 0.3rem;
+  color: #045686; /* etiqueta en tono azul medio */
+}
+
+
+/* Side illustration as a sympathetic wink */
+.side-illustration {
+  position: fixed;
+  bottom: 1rem;
+  right: 100rem;
+  width: 250px;
+  opacity: 1;
+  transform: rotate(0deg);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  .countdown-large {
+    gap: 1.5rem;
+  }
+  .countdown-large .time-box {
+    padding: 1rem 0.8rem;
+    min-width: 80px;
+  }
+  .countdown-large .time-box div {
+    font-size: 2rem;
+  }
+  .countdown-large .time-box span {
+    font-size: 1rem;
+  }
+  .side-illustration {
+    width: 100px;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    transform: rotate(-8deg);
+  }
 }
