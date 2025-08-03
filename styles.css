@@ -146,9 +146,10 @@ header p {
     font-size: 1rem;
   }
   .side-illustration {
-    width: 100px;
+    width: 130px;
     bottom: 0.5rem;
     right: 0.5rem;
     transform: rotate(0deg);
+    opacity: 0.8;
   }
 }
